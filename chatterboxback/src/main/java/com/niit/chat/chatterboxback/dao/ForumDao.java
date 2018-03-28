@@ -5,6 +5,7 @@ import java.util.List;
 import com.niit.chat.chatterboxback.model.Forum;
 
 public interface ForumDao {
+	
 	public boolean addForum(Forum forum);
 	public boolean updateForum(Forum forum);
 	public boolean deleteForum(Forum forum);

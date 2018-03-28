@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.chat.chatterboxback.dao.JobDao;
+import com.niit.chat.chatterboxback.model.ApplyJob;
 import com.niit.chat.chatterboxback.model.Job;
 
 @Repository("jobDao")
@@ -58,6 +59,18 @@ public class JobImpl implements JobDao {
 		session.getTransaction().commit();
 		session.close();		
 		return list;
+	}
+
+	@Override
+	public boolean applyJob(ApplyJob applyJob) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<ApplyJob> getAllAppliedJobDetails() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

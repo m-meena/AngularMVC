@@ -31,7 +31,7 @@ public class BlogTest {
 	{
 		blog = new Blog();
 		blog.setBlogName("chatter");
-		blog.setBlogContext("welcome");
+		blog.setBlogContent("welcome");
 		blog.setCreationDate(new Date());
 		blog.setStatus("enable");
 		blog.setUserName("aathi");

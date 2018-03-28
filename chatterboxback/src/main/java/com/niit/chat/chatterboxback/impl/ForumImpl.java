@@ -20,6 +20,7 @@ public class ForumImpl implements ForumDao {
 	
 	@Override
 	public boolean addForum(Forum forum) {
+		System.out.println("adding forum");
 		try
 		{
 			sessionFactory.getCurrentSession().saveOrUpdate(forum);
@@ -46,14 +47,14 @@ public class ForumImpl implements ForumDao {
 
 	@Override
 	public boolean approveForum(Forum forum) {
-		forum.setStatus("Enable");
+		forum.setStatus("A");
 		sessionFactory.getCurrentSession().update(forum);
 		return true;
 	}
 
 	@Override
 	public boolean rejectForum(Forum forum) {
-		forum.setStatus("NA");
+		forum.setStatus("R");
 		sessionFactory.getCurrentSession().update(forum);
 		return true;
 	}
@@ -68,7 +69,7 @@ public class ForumImpl implements ForumDao {
 	public List<Forum> forumList(String userName) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();		
-		List<Forum> list=session.createQuery("from ForumTable").list();
+		List<Forum> list=session.createQuery("from ForumTable where userName = '" +userName+ "'").list();
 		session.getTransaction().commit();
 		session.close();		
 		return list;

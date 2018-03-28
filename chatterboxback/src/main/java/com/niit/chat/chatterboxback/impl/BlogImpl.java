@@ -48,13 +48,13 @@ public class BlogImpl implements BlogDao {
 	}
 
 	public boolean approveBlog(Blog blog) {
-		blog.setStatus("Enable");
+		blog.setStatus("A");
 		sessionFactory.getCurrentSession().update(blog);
 		return true;
 	}
 
 	public boolean rejectBlog(Blog blog) {
-		blog.setStatus("NA");
+		blog.setStatus("R");
 		sessionFactory.getCurrentSession().update(blog);
 		return true;
 	}
@@ -69,10 +69,16 @@ public class BlogImpl implements BlogDao {
 	public List<Blog> blogList(String userName) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();		
-		List<Blog> list=session.createQuery("from BlogTable").list();
+		List<Blog> list=session.createQuery("from BlogTable where userName = '" +userName+ "'" ).list();
 		session.getTransaction().commit();
 		session.close();		
 		return list;
+	}
+
+	@Override
+	public boolean incrementLike(Blog blog) {
+		sessionFactory.getCurrentSession().update(blog);
+		return false;
 	}
 
 }

@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity(name="BlogTable")
 public class Blog {
 
@@ -15,10 +17,12 @@ public class Blog {
 	private int blogId;
 	
 	private String blogName;
-	private String blogContext;
+	private String blogContent;
 	private String userName;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private Date creationDate;
 	private String status;
+	private int likes;
 	
 	public int getBlogId() {
 		return blogId;
@@ -31,12 +35,12 @@ public class Blog {
 	}
 	public void setBlogName(String blogName) {
 		this.blogName = blogName;
+	}	
+	public String getBlogContent() {
+		return blogContent;
 	}
-	public String getBlogContext() {
-		return blogContext;
-	}
-	public void setBlogContext(String blogContext) {
-		this.blogContext = blogContext;
+	public void setBlogContent(String blogContent) {
+		this.blogContent = blogContent;
 	}
 	public String getUserName() {
 		return userName;
@@ -55,6 +59,12 @@ public class Blog {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public int getLikes() {
+		return likes;
+	}
+	public void setLikes(int likes) {
+		this.likes = likes;
 	}
 	
 }

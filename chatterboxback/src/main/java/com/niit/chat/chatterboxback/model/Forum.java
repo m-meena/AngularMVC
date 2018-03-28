@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity(name="ForumTable")
 public class Forum {
 
@@ -15,10 +17,12 @@ public class Forum {
 	private int forumId;
 	
 	private String forumName;
-	private String forumContext;
+	private String forumContent;
 	private String userName;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private Date creationDate;
 	private String status;
+	
 	public int getForumId() {
 		return forumId;
 	}
@@ -30,12 +34,12 @@ public class Forum {
 	}
 	public void setForumName(String forumName) {
 		this.forumName = forumName;
+	}	
+	public String getForumContent() {
+		return forumContent;
 	}
-	public String getForumContext() {
-		return forumContext;
-	}
-	public void setForumContext(String forumContext) {
-		this.forumContext = forumContext;
+	public void setForumContent(String forumContent) {
+		this.forumContent = forumContent;
 	}
 	public String getUserName() {
 		return userName;

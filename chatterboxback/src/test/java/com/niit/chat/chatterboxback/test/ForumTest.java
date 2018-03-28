@@ -31,7 +31,7 @@ public class ForumTest {
 	{
 		forum = new Forum();
 		forum.setForumName("chatter");
-		forum.setForumContext("welcome");
+		forum.setForumContent("welcome");
 		forum.setCreationDate(new Date());
 		forum.setStatus("enable");
 		forum.setUserName("aathi");

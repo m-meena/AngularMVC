@@ -1,0 +1,81 @@
+<html ng-app = "routeModule">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<link rel="icon" href="images/chat.png" type="image/png">
+<title>Chatter Box</title>
+
+<!-- Bootstrap  -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+<!-- JS  -->
+	<script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+	<script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>
+	<script src = "js/routeConfig.js"></script>
+
+</head>
+<body>
+
+<!-- <nav class = "navbar navbar-default">
+	<div class="container">
+	
+	<div class="navbar-header">
+  	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"data-target="#bs-navbar-collapse">
+  	<span class="sr-only"></span>
+  	<span class="icon-bar"></span>
+  	<span class="icon-bar"></span>
+  	<span class="icon-bar"></span>
+  	<span class="icon-bar"></span>
+  	<span class="icon-bar"></span>
+  	</button><br>
+  	<div><a class="navbar-brand" href="#!/">
+ 		<div class = "col-sm-5"><img src = "images/chat.png" alt="chat" style="width:50px;height:50px"></div>
+ 		<br><div class = "col-sm-7"><b>ChatterBox</b></div></a></div>
+  	</div>
+	<div class="collapse navbar-collapse" id="bs-navbar-collapse">    	 
+		<ul class="nav navbar-nav navbar-right"><br><br>
+     	 <li><a href="#!/"><strong>Home</strong></a></li>
+      	 <li><a href="#!/login"><strong>Login</strong></a></li>
+      	 <li><a href="#!/register"><strong>Register</strong></a></li>
+      	 <li><a href="#!/aboutUs"><strong>About Us</strong></a></li>
+      	 <li><a href="#!/contactUs"><strong>Contact Us</strong></a></li>
+   		</ul>
+	</div>
+	</div><br>
+</nav> -->
+
+ <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">ChatterBox</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#!/home"><strong>Home</strong></a></li>
+      	<li><a href="#!/blog"><strong>Blog</strong></a></li>
+      	<li><a href="#!/login"><strong>Login</strong></a></li>
+      	<li><a href="#!/register"><strong>Register</strong></a></li>
+      	<li><a href="#!/aboutUs"><strong>About Us</strong></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#!/home"><strong>Home</strong></a></li>
+      	<li><a href="#!/blog"><strong>Blog</strong></a></li> 
+      	<li><a href="#!/login"><strong>Login</strong></a></li>
+      	<li><a href="#!/register"><strong>Register</strong></a></li>
+      	<li><a href="#!/aboutUs"><strong>About Us</strong></a></li>     	
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  
+  
+
+<div ng-view></div>
+
+<footer><div class="navbar navbar-default navbar-fixed-bottom"> <br>&nbsp;&nbsp;&copy; Copyright since 1995</div></footer>
+</body>
+</html>
